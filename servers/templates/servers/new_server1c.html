@@ -1,0 +1,12 @@
+{# {% extends "servers/base.html" %} #}
+{# {% block content %} #}
+
+	<div>
+		<h4>Подключить новый сервер</h4>
+		<form action ="{% url 'servers:new_server1c' %}" method='post'>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button name="submit">Добавить сервер</button>
+		</form>
+	</div>
+	{# {% endblock content %} #}

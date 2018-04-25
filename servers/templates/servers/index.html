@@ -1,0 +1,56 @@
+{% extends "servers/base.html" %}
+{% load staticfiles %}
+
+{#{% block header %}#}
+{#    <div class='jumbotron'>#}
+{#      <h1>Track your learning</h1>#}
+{#    </div>#}
+{#{% endblock header %}#}
+
+{% block content %}
+
+    <table class="table">
+      <tr>
+        <td>
+            <div class="services__item">
+{#                <img src="{% static "img/image1c220_220.png" %}" alt="My image"/>#}
+                <a href="/servers1c"><img src="{% static "img/image1c220_220.png" %}" alt=""></a>
+                <a href="/servers1c"> <h3>Сервера 1C</h3> </a>
+            </div>
+        </td>
+        <td>
+            <div class="services__item">
+                <img src="{% static "img/imageDB220_220.png" %}" alt="My image"/>
+                <h3>Сервера 1C</h3>
+            </div>
+        </td>
+        <td>
+            <div class="services__item">
+                <img src="{% static "img/imageDB1C220_220.png" %}" alt="My image"/>
+                <h3>Сервера 1C</h3>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <div class="services__item">
+                <img src="{% static "img/image1c220_220.png" %}" alt="My image"/>
+                <h3>Сервера 1C</h3>
+            </div>
+        </td>
+        <td>
+            <div class="services__item">
+                <img src="{% static "img/imageDB220_220.png" %}" alt="My image"/>
+                <h3>Сервера 1C</h3>
+            </div>
+        </td>
+        <td>
+            <div class="services__item">
+                <img src="{% static "img/nastrojka220_220.png" %}" alt="My image"/>
+                <h3>Настройка</h3>
+            </div>
+        </td>
+      </tr>
+
+    </table>
+{% endblock content %}

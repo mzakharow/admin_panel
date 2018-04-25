@@ -1,0 +1,43 @@
+.page-header {
+    background-color: #000000;
+    /*background-color: red;*/
+    margin-top: 0;
+    padding: 15px 15px 15px 40px;
+}
+
+.page-header, .page-header a, .page-header a:visited, .page-header a:active {
+    color: chocolate;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+
+.nav, .navbar-nav, .navbar-right {
+    margin-top: 0;
+    padding: 0px 40px 15px 40px;
+}
+
+.table {
+    color: red;
+    text-align: center;
+}
+
+.services__item {
+    width: 300px;
+    /*float: left;*/
+    text-align: center;
+}
+
+.page-footer {
+    /*background-color: #000000;
+    padding: 5px 5px 5px 40px;
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    margin-top: 100px;*/
+    /*height: 80px;
+    margin-top: -80px;*/
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+}

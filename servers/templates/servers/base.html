@@ -1,0 +1,107 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+
+  {#      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>#}
+      <!--<script>
+        $(function(){
+        $('.view-source .hide').hide();
+        $a = $('.view-source a');
+        $a.on('click', function(event) {
+          event.preventDefault();
+          $a.not(this).next().slideUp(500);
+          $(this).next().slideToggle(500);
+        });
+        });
+      </script> -->
+
+
+
+      <link rel="stylesheet" href="{% static 'css/servers.css' %}">
+      <div>
+        {% block header %}{% endblock header %}
+      </div>
+      <title>Панель администратора</title>
+    </head>
+    <body>
+      <!--Статическая навигационная панель-->
+      {#    <nav class="navbar navbar-default navbar-static-top">#}
+        {#      <div class="container">#}
+          {#          <div class="navbar-header">#}
+            {#              <button type="button" class="navbar-toggle collapsed"#}
+            {#                      data-toggle="collapse" data-target="#navbar"#}
+            {#                      aria-expanded="false" aria-controls="navbar">#}
+          {#              </button>#}
+          {#              <a class="navbar-brand" href="{% url 'servers:index' %}">Панель администратора</a>#}
+        {#          </div>#}
+        {##}
+        {##}
+        {#          <div id="navbar" class="navbar-collapse collapse">#}
+
+
+
+          {#              <ul class="nav navbar-nav">#}
+            {#                  <li><a href="{% url 'learning_logs:topics' %}">Topics</li>#}
+            {#              </ul>#}
+
+            {#              <ul class="nav navbar-nav navbar-right">#}
+              {#                  {% if user.is_authenticated %}#}
+              {#                    <li><a> Hello, {{ user.username }}.</a></li>#}
+              {#                    <li><a href="{% url 'users:logout' %}">Log out</a></li>#}
+              {#                  {% else %}#}
+              {#                    <li><a href="{% url 'users:register' %}">Register</a></li>#}
+              {#                    <li><a href="{% url 'users:login' %}">Log in</a></li>#}
+              {#                  {% endif %}#}
+            {#              </ul>#}
+
+
+
+          {#          </div>#}
+        {#      </div>#}
+        {##}
+      {#    </nav>#}
+
+      <div class="page-header">
+        <a href="/">Панель администратора</a>
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          <a> Пользователь: {{ user.username }}.</a>
+          <a href="{% url 'users:logout' %}">Выход</a>
+          {% else %}
+          {#                  <!--<li><a href="{% url 'users:register' %}">Register</a></li>-->#}
+          <a href="{% url 'users:login' %}">Вход</a>
+          {% endif %}
+        </ul>
+      </div>
+
+      
+
+
+      <div class="container">
+        {#        <div class="page-header">#}
+          {#            {% block header %}{% endblock header %}#}
+        {#        </div>#}
+        <div>
+          {% block content %}{% endblock content %}
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>All rights reserved</div>
+      </div>
+
+    </body>
+
+    </html>

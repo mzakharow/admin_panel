@@ -1,0 +1,80 @@
+{% extends "servers/base.html" %}
+
+{% block header %}
+    <title>Раздел: Сервера 1С</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+{% endblock header %}
+
+{% block content %}
+{#    <h2>#}
+    {#      <a href="{% url 'users:register' %}">Register an account</a> to make#}
+    {#        your own Learning Log, and list the topics you're learning about.#}
+{#    </h2>#}
+
+<div id="result"></div>
+
+<script type="text/javascript">
+$( "#result" ).load( "new_server1c", function() {
+  // <!--alert( "Load was performed." );-->
+});
+</script>
+
+<h3>
+  Сервера 1С
+</h3>
+<ul>
+    {% for server in servers %}
+    <li>
+        <h4>
+            {# <a href="{% url 'servers:server' server.name %}">{{ server }}</a>  #}
+            {{ server.description }} <a href="/">Информация</a> 
+
+        </h4>
+
+        <ul>
+            {% for port in server.port.all %}
+                <li>{{ server.name }}:{{ port }} <a href="/">Информация</a></li>
+            {% endfor %}
+        </ul>
+        <!--<ul>
+            {% for port in ports %}
+            <li>
+                <h4>
+                    {# <a href="{% url 'servers:server' server.name %}">{{ server }}</a>  #}
+                     {{ server.name }}:{{ port }}
+
+                </h4>
+
+
+
+            </li>
+
+            {% empty %}
+            <li>Список серверов 1С пуст.</li>
+            {% endfor %}
+
+        </ul>-->
+
+    </li>
+
+    {% empty %}
+    <li>Список серверов 1С пуст.</li>
+    {% endfor %}
+
+</ul>
+
+<ul>
+    {%for server in server_list %}
+
+    <li>
+        <h4>
+            {{ server }}
+        </h4>
+    </li>
+
+    {% empty %}
+    <li>Список серверов 1С пуст.</li>
+    {% endfor %}
+</ul>    
+
+{% endblock content %}
